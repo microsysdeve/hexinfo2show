@@ -27,6 +27,7 @@ class CLHEXFILEDATA clhexfiledata;
 #define			_iRand_			2
 
 const char	sVersion[] = "This program Create by microsys@sina.com.CopyRight 2020-07-05\n";
+//Addr: = https ://github.com/microsysdeve/hexinfo2show.git\n";
 
 const char sPorgNoLimt[] = "nolimit";
 const unsigned long lMaxno = 65533;
@@ -37,7 +38,7 @@ const unsigned long lMaxno_nolimt = 65534;
 void
 message_fail (void)
 {
-	fprintf(stdout, "%s", sVersion);
+ fprintf(stdout, "%s", sVersion);
   fprintf (stderr, "%s", "The input file error\n");
   fprintf (stderr, "%s", "Example:\n");
   fprintf (stderr, "%s", " hexinfo2show  hexfilename \n");
@@ -138,11 +139,12 @@ message_success (void)
 void
 filemessageout(char *strfilename, struct STVERSION_CRC *stp)
 {
-	fprintf(stdout, "%s", sVersion);
+	
 	fprintf(stdout, "filename:=%s\n", strfilename);
 	fprintf(stdout, "project=%s\n", stp->sProjectName);	
 	fprintf(stdout, "version=%02d-%02d-%02d_%02d:%02d:%02d\n", stp->sVerion[2], stp->sVerion[1], stp->sVerion[0], stp->sVerion[5], stp->sVerion[4], stp->sVerion[3]);	
 	fprintf(stdout, "addr=%s\n", stp->sProjectAddr);
+	fprintf(stdout, "%s", sVersion);
 }
  
 int
@@ -158,11 +160,10 @@ _tmain (int argc, char *argv[])
   unsigned short itemp;
   char cmode = 0;
   char **w =0;
-  //char	stemp[] = "f:\\cache\\Ground_Current_Monitor\\source\\output\\pwr.hex";
-  //char	stemp[] = "C:\\worktop\\jdjlvyv_deve\\jdjlvyv\\MDK-ARM\\jdjlvyv\\jdjlvyv.hex";
+
   errno_t err;
   struct   STVERSION_CRC  *stdata;
-  char		stemp[] = "0x1234";
+  
   if (argc < 2)
     {
 	  message_fail ();
@@ -172,7 +173,7 @@ _tmain (int argc, char *argv[])
   if (argc > 2)
   {
 	  loffset = strtol(argv[2],w,0 );
-  }//loffset = atoi();
+  }
   else
 	  loffset = loffsetdef;
 
@@ -182,7 +183,7 @@ _tmain (int argc, char *argv[])
 	  fprintf(stderr, "%s", "offset error\n");
 	  fprintf(stderr, "%s", "Example:\n");
 	  fprintf(stderr, "%s", " hexinfo2show  hexfilename  0xc800\n");
-	  getchar();
+	  system("pause");
   }
   
   clhexfiledata.sttextfiledata.lsbuflen =
