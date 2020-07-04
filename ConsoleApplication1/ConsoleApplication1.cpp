@@ -26,7 +26,7 @@ class CLHEXFILEDATA clhexfiledata;
 #define			_iBuflen_		213
 #define			_iRand_			2
 
-const char	sVersion[] = "This program Create by microsys@sina.com.CopyRight 2020-07-05\n";
+const char	sVersion[] = "This program Create by microsys@sina.com.CopyRight 2020-07-06\n";
 //Addr: = https ://github.com/microsysdeve/hexinfo2show.git\n";
 
 const char sPorgNoLimt[] = "nolimit";
@@ -142,7 +142,7 @@ filemessageout(char *strfilename, struct STVERSION_CRC *stp)
 	
 	fprintf(stdout, "filename:=%s\n", strfilename);
 	fprintf(stdout, "project=%s\n", stp->sProjectName);	
-	fprintf(stdout, "version=%02d-%02d-%02d_%02d:%02d:%02d\n", stp->sVerion[2], stp->sVerion[1], stp->sVerion[0], stp->sVerion[5], stp->sVerion[4], stp->sVerion[3]);	
+	fprintf(stdout, "version=%02d-%02d-%02d_%02d:%02d:%02d\n", stp->sVerion[2], stp->sVerion[1], stp->sVerion[0], stp->sVerion[6], stp->sVerion[5], stp->sVerion[4]);	
 	fprintf(stdout, "addr=%s\n", stp->sProjectAddr);
 	fprintf(stdout, "%s", sVersion);
 }
